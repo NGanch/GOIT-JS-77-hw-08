@@ -22,4 +22,4 @@ function createImageCard(array){
 
 container.insertAdjacentHTML('beforeend', createImageCard(galleryItems));
 
-let gallery = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250}); 
+const gallery = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250}); 

@@ -16,12 +16,12 @@ form.addEventListener('submit', onFormSubmit);
 
     function populateTextarea(){
         const saveMessage = localStorage.getItem(LOCALSTORAGE_KEY);
-        const dog = JSON.parse(saveMessage);
+        const saveItem = JSON.parse(saveMessage);
 
         if(saveMessage){
             console.log(saveMessage)
-            form.email.value = dog.email;
-            form.message.value = dog.message;
+            form.email.value = saveItem.email;
+            form.message.value = saveItem.message;
         }
     }
 
@@ -29,7 +29,22 @@ form.addEventListener('submit', onFormSubmit);
 
     function onFormSubmit(evt){
         evt.preventDefault();
+     
+    const  { email, message } = evt.currentTarget.elements;
+    const emailResult = email.value;
+    const messageResult = message.value;
+  
+    
+    if(emailResult === '' && messageResult === ''){
+        alert('Please enter all')
+    } else{
         console.log(formData)
         evt.currentTarget.reset();
         localStorage.removeItem(LOCALSTORAGE_KEY);
+
     }
+          
+       
+    }
+
+
