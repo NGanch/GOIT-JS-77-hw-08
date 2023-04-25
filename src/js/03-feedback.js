@@ -29,22 +29,15 @@ form.addEventListener('submit', onFormSubmit);
 
     function onFormSubmit(evt){
         evt.preventDefault();
-     
-    const  { email, message } = evt.currentTarget.elements;
-    const emailResult = email.value;
-    const messageResult = message.value;
-  
     
-    if(emailResult === '' && messageResult === ''){
+    if(form.email.value === '' || form.message.value === ''){
         alert('Please enter all')
     } else{
         console.log(formData)
         evt.currentTarget.reset();
-        localStorage.removeItem(LOCALSTORAGE_KEY);
+        localStorage.removeItem(LOCALSTORAGE_KEY);  
 
     }
-          
-       
-    }
+}
 
 
